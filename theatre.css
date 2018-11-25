@@ -1,0 +1,97 @@
+div#theatre {
+    width: 100vw;
+    height: 100vh;
+    font-size: max(16px,min(24px,3vw));
+    position: absolute;
+    color: rgba(255,255,255, 0.3);
+    text-shadow: 0 0 2px yellow , 0 0 4px black,0 0 6px white;
+}
+
+@-moz-document url-prefix() {
+    div#theatre {
+        text-shadow: 0 0 1px yellow , 0 0 3px black,0 0 9px white;
+    }
+}
+
+/* For backwards compatibility 
+---------------------------------------*/
+@media screen and (min-width: 800px) {
+    div#theatre {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 800px) and (min-width: 550px) {
+    div#theatre {
+        font-size: 3vw;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    div#theatre {
+        font-size: 16px;
+    }
+}
+/*---------------------------------------*/
+
+div#theatre #background-img {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 100;
+    background-size: cover;
+    filter: brightness(20%);
+
+    /* To avoid flickering brightness transition */
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    /* ----------------------------- */
+}
+
+div#theatre #history {
+    position: relative;
+    z-index: 200;
+    text-align: left;
+    text-shadow: 0 0 1px #12ff00, 0 0 3px black, 0 0 4px black;
+}
+
+div#theatre #curtain-left, div#theatre #curtain-right {
+    content: '';
+    position: absolute;
+    z-index: 300;
+    top: -30px;
+    bottom: -30px;
+    width: 61%;
+    transition: all 4s ease-out;
+    transform: rotate(0deg);
+    background-color: #A90505;
+    background-image: linear-gradient(90deg,  transparent 10%, rgba(255,255,255,.25) 50% ,transparent 65% );
+    background-repeat: repeat;
+    box-shadow: 0 0 10px #555 ,inset 0 -60px  60px -30px  rgba(255,255,255, 0.5), inset 0 90px  60px -30px  rgba(0,0,0, 0.5);
+    background-size: 80px;
+}
+
+#curtain-left { left: -10% }
+
+#curtain-right { right: -10% }
+
+#theatre.open #curtain-left {
+    transform: rotate(15deg);
+}
+
+#theatre.open #curtain-right {
+    transform: rotate(-15deg);
+}
+
+#theatre.open #curtain-left, #theatre.open #curtain-right {
+    width: 0;
+    background-size: 1px;
+    transition: all 4s ease;
+}
+
+#theatre.open #background-img {
+    filter: brightness(100%);
+    transition: all 4s ease;
+}

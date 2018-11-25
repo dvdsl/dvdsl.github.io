@@ -1,0 +1,53 @@
+body
+{
+	margin: 0;
+	overflow: hidden;
+	background-color: #936c39ce;
+}
+
+.university-location {
+	font-size: 0.8em;
+}
+
+#edu-grid {
+	display:grid; 
+	grid-template-rows: 1fr auto; 
+	grid-template-columns: auto 1fr; 
+	max-width: 1100px; 
+	grid-column-gap: 82px
+}
+
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	  -webkit-user-select: none; /* Safari */
+	   -khtml-user-select: none; /* Konqueror HTML */
+		 -moz-user-select: none; /* Old versions of Firefox */
+		  -ms-user-select: none; /* Internet Explorer/Edge */
+			  user-select: none; /* Non-prefixed version, currently
+									supported by Chrome, Opera and Firefox */
+}
+
+canvas {
+	width: calc(100vw - 900px);
+	height: 100%;
+	z-index: 100;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	
+	overflow: hidden;
+	touch-action: none;
+	cursor: none;
+}
+
+@media screen and (max-width: 1200px) {
+	canvas {
+		display: none;
+	}
+}
+
+#skills {
+	position: relative; 
+	z-index: 199; 
+	margin-top: 50px
+}

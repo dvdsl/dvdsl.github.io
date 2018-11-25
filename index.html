@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Personal Website of Davood Salehabadi">
+  <meta name="keywords" content="Davood Salehabadi">
+  <meta name="author" content="Davood Salehabadi">
+  <title>Davood Salehabadi</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
+  <link rel="stylesheet" href="base64fonts.css" type="text/css">
+  <link rel="stylesheet" href="misc.css" type="text/css">
+  <link rel="stylesheet" href="intro.css" type="text/css">
+  <link rel="stylesheet" href="theatre.css" type="text/css">
+  <link rel="stylesheet" href="tooltip.css" type="text/css">
+  <link rel="stylesheet" href="radial-tree.css" type="text/css">
+  <link rel="stylesheet" href="simple-tree.css" type="text/css">
+  <link rel="stylesheet" href="popup.css" type="text/css">
+  <script src="intro.js"></script>
+</head>
+
+<body>
+  <span id="name" class="slam customfont">DS</span>
+  <div id="theatre">
+    <div id="background-img"></div>
+    <em id="curtain-left"></em>
+    <em id="curtain-right"></em>
+    <div id="history" style="margin-top: 7em;">
+      <div id="education" style="margin-left: 1em;">
+        <div class="popup" id="popup-umich">
+          <figure>
+            <a href="#" class="close"></a>
+            <figcaption>
+              Among Top 5 graduate level CSE schools in the US <br>
+              <a style="color: inherit;" target="_blank" rel="noopener noreferrer" 
+                href="https://www.usnews.com/best-graduate-schools/top-engineering-schools/computer-engineering-rankings">
+                Redirect to ranking on US News </a>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="popup" id="popup-sharif">
+          <figure>
+            <a href="#" class="close"></a>
+            <figcaption>
+              Considered MIT of Iran <br>
+              <a style="color: inherit;" target="_blank" rel="noopener noreferrer" 
+                href="https://en.wikipedia.org/wiki/Sharif_University_of_Technology">
+                Redirect to Wikipedia for more information </a>
+            </figcaption>
+          </figure>
+        </div>
+        <div style="margin-bottom: 20px; text-decoration: underline;">Education</div>
+        <div id="edu-grid" class="noselect">
+          <ul class="tree">
+            <li>
+              <input type="checkbox" id="c1" onchange="adjustGrid(this)"/>
+              <label for="c1" class="tree_label lvl1">
+                <a id="umich" href="#popup-umich" class="expandable popup-parent">
+                  University of Michigan <span class="university-location">(Ann Arbor)</span></a>
+              </label>
+              <ul>
+                <li>
+                  <span class="tree_label starts_with_emoji">🏆 Awarded EECS graduate fellowship worth $72K USD</span>
+                </li>
+                <li>
+                  <input type="checkbox" id="c2" />
+                  <label for="c2" class="tree_label lvl2">Graduate Student Instructor</label>
+                  <ul>
+                    <li><span class="tree_label">EECS 498<br>Adv. Embedded Systems</span></li>
+                    <li><span class="tree_label">EECS 373<br>Intro. to Embedded Systems Design</span></li>
+                    <li><span class="tree_label">ENGR 100<br>Microprocessors and Toys</span></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div>M.Sc. in <span class="CSE-Tooltip"></span></div>
+          <ul class="tree">
+            <li>
+              <input type="checkbox" id="c3" />
+              <label for="c3" class="tree_label lvl1">
+                  <a id="sharif" href="#popup-sharif" class="expandable popup-parent">
+                    Sharif University of Technology <span class="university-location">(Tehran)</span></a>
+              </label>
+              <ul>
+                  <li>
+                    <span class="tree_label starts_with_emoji">🏆 Always in top 5 of the class</span>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="c4" />
+                    <label for="c4" class="tree_label lvl2">Teacher Assistant</label>
+                    <ul>
+                      <li><span class="tree_label">Signals & Systems</span></li>
+                      <li><span class="tree_label">Digital Electronics</span></li>
+                      <li><span class="tree_label">Computer Architecture & Design</span></li>
+                    </ul>
+                  </li>
+                </ul>
+            </li>
+          </ul>
+          <div>B.Sc. in <span class="CSE-Tooltip"></span></div>
+        </div>
+      </div>
+    </div>
+    <div id="skills"></div>
+  </div>
+  <canvas id="canvas"></canvas>
+  <script src="dancers.js"></script>
+  <script src="assets/d3.min.js"></script>
+  <script src="radial-tree.js"></script>
+  <script>
+    function adjustGrid(el){
+      document.getElementById("edu-grid").style["max-width"] = el.checked ? "1200px" : "1100px";
+    }
+  </script>
+  <template id="tooltip-template">
+    <span class="tooltip">CSE
+      <span class="tooltiptext">Computer Science & Engineering</span>
+    </span>
+  </template>
+</body>
+
+</html>
