@@ -1,0 +1,28 @@
+.node circle {
+	fill: #fff;
+	stroke: #a90505;
+	stroke-width: 1.5px;
+}
+
+.node text {
+	font-size: 22px;
+	font-family: 'Apple Chancery', 'Times New Roman', Times, serif;
+	fill: #00e2ff; 
+	text-shadow: 0 0 2px #00c6ff, 0 0 3px black, 0 0 4px black
+}
+
+.link {
+	fill: none;
+	stroke: #555;
+	stroke-width: 1.5px;
+}
+
+.noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	  -webkit-user-select: none; /* Safari */
+	   -khtml-user-select: none; /* Konqueror HTML */
+		 -moz-user-select: none; /* Old versions of Firefox */
+		  -ms-user-select: none; /* Internet Explorer/Edge */
+			  user-select: none; /* Non-prefixed version, currently
+									supported by Chrome, Edge, Opera and Firefox */
+}

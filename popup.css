@@ -1,0 +1,72 @@
+/* Based on the example at: https://developer.mozilla.org/en-US/docs/Web/CSS/:target */
+
+/* Unopened popup */
+.popup {
+  display: none;
+}
+
+/* Opened popup */
+.popup:target {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.8em;
+}
+
+/* popup content */
+.popup figcaption {
+  position: relative;
+  padding: 1em 1.3em;
+  background-color: rgba(132, 115, 21, 0.75);
+  border-radius: 17px;
+  z-index: 298;
+}
+
+/* Close button */
+.popup .close {
+  position: relative;
+  display: block;
+}
+
+.popup .close::after {
+  right: -1rem;
+  top: -1rem;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  border-radius: 50%;
+  color: white;
+  content: "×";
+  cursor: pointer;
+  z-index: 299;
+}
+
+/* popup overlay */
+.popup .close::before {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  content: "";
+  cursor: default;
+  z-index: 297;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.popup-parent {
+  color: inherit;
+  text-decoration: none;
+}
